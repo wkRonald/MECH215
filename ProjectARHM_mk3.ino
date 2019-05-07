@@ -36,7 +36,7 @@ void setup() {
   delay(1000); // needed delay for motor (at least 0.1 sec)
   
   servoY1.write(100);
-  //servoY2.write(0);
+  //servoY2.write(100);
   delay(1000);
 
   //ULTRASONIC SENSOR PIN SET-UP
@@ -70,7 +70,7 @@ void loop() {
       while(1); // infinite loop that does nothing if exit doesn't work (alternative to exit) 
     }
     
-    if(distance > 6.0) { //Object found therefore Activates the movement sequence
+    if(distance < 6.0) { //Object found therefore Activates the movement sequence
       Object_found(); 
       delay(2000);
       Put_Trash();// Put the object in the "trash can"
